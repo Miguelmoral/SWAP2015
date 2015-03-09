@@ -1,0 +1,6 @@
+##Práctica 1
+#Miguel Moral Llamas
+
+#Ejercicio 1
+	En primer lugar he creado un archivo prueba.txt en la máquina A , a continuación , dentro de la máquina he ejecutado la orden `tar czf - directorio | ssh 192.168.1.24 'cat > ~/tar.tgz'`
+	siendo 192.168.1.24 la ip de la máquina B (a la cuál queremos pasar el archivo).
