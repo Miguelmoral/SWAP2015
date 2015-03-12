@@ -1,0 +1,20 @@
+##Preguntas tipo test tema 1
+#Miguel Moral Llamas
+
+1.¿Qué es una granja web?
+
+	A)Es un conjunto de servidores dedicados a
+	servir contenido web a los usuarios finales.
+	B)Sirve contenido estático a un navegador, carga un archivo y lo sirve a través de la red al navegador de un usuario.
+	C)Se define como un documento electrónico el cual contiene información textual, visual y/o sonora que se encuentra alojado en un servidor y puede ser accesible mediante el uso de navegadores.
+	D)Todas las definiciones anteriores son correctas.
+	Solución: A
+	
+2.Tener una máquina servidor replicada:
+
+	A)No nos aporta ninguna ventaja , ya que es una máquina sin utilidad.
+	B)Es la única solución posible y la más económica frente a fallos de la máquina principal.
+	C)Nos permite atender a las peticiones de los usuarios cuando la demanda del servidor sea muy elevada.
+	D)Es una posible solución frente a fallos hardware , aunque nos supone un coste de adquisición y un esfuerzo.
+	Solución:D
+	
