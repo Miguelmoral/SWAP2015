@@ -1,0 +1,18 @@
+##Preguntas tipo test tema2
+#Miguel Moral Llamas
+
+1.Con respecto a la disponibilidad de un sitio web:
+
+	A)Todas las caidas del servidor se producen de forma inesperada.
+	B)Unicamente existen tiempos de no-disponibilidad programados.
+	C)Solamente debería haber tiempos de no-disponibilidad no programados.
+	D)Los tiempos de no-disponibilidad programadas son debidas a actualizaciones de software o hardware.
+	Solución:D
+	
+2.Si replicásemos un servidor de un sistema con una disponibilidad de un 90% 
+
+	A)No se obtendría ninguna mejora
+	B)Se obtendría una mejora del 9%
+	C)Se obtendría una mejora del 10%
+	D)Se obtendría una mejora del 5%
+	Solución:B
