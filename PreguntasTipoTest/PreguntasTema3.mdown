@@ -1,0 +1,18 @@
+##Preguntas tipo test tema3
+#Miguel Moral Llamas
+
+1.Respecto a la configuración de una zona segura:
+
+	A)Una configuración sin DMZ solo tiene sentido para una pequeña empresa donde no existan problemas de prestaciones.
+	B)En una configuración sin DMZ no se comparte ningún tipo de recurso.
+	C)La configuración sin DMZ no presenta ningún tipo de problema
+	D)La principal ventaja de una configuración sin DMZ es la conpartición del ancho de banda(Servidores y máquinas de escritorio).
+	Solución:A
+	
+2.Cuál de las siguientes características de una configuración con DMZ doble es correcta:
+
+	A)La configuración de DMZ tradicional es más segura.
+	B)Se basa en aislar todos los servidores con cortafuegos.
+	C)Los servidores no quedan totalmente protegidos con los cortafuegos.
+	D)El DMZ tiene solo un front-rail.
+	Solución:B
