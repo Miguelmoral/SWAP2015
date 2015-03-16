@@ -1,0 +1,27 @@
+##Práctica 1
+#Miguel Moral Llamas
+
+Al principio de la práctica me di cuenta de que no podia acceder de forma remota por ssh , ya que la versión de ubuntu server que instale es la 14.04.2 por lo tanto mediante un tutoríal indicado por el profesor edité el archivo `/etc/ssh/sshd_config` en dicho archivo tendremos que modificar el parámetro PermitirRootLogin y ponerlo a yes `PermitRootLogin yes`.
+El profesor también mando un enlace para cambiar el PROMT y que se muestre la ip , cosa que nos resultara muy comoda al estar trabajando en dos máquinas distintas. Básicamente el comando que hay que ejecutar es `  export PS1="\u@$(ip addr show dev eth1 | grep "inet " | cut -d" " -f6) $"`
+
+#Ejercicio 1
+
+-Crear un tar con ficheros locales en un equipo remoto
+
+En primer lugar he creado un archivo prueba.txt en la máquina A , a continuación , dentro de la máquina he ejecutado la orden `tar czf - directorio | ssh 192.168.1.24 'cat > ~/tar.tgz'`
+siendo 192.168.1.24 la ip de la máquina B (a la cuál queremos pasar el archivo).
+	
+#Ejercicio2
+
+-Instalar la herramienta rsync
+
+En primer lugar vamos a instalar la herramienta rsync con el comando `sudo apt-get install rsync`. En mi caso ya estaba instalada por lo tanto no ha sido necesario este paso.
+
+A continuación para hacer una comprobación vamos a clonar la carpeta con el contenido del servidor web 
+
+Como podemos ver en la siguiente captura: ![Ejercicio2](Ejercicio2.png) 
+
+Tras ejecutar el comando `rsync -avz -e ssh root@192.168.1.100:/var/www/ /var/www/` en la máquina2 podemos ver en ambas máquinas con `ls -la /var/www` que el directorio `/var/www` es idéntico.  
+
+Pero además esta herramienta nos permite especificar que directorios copiar y cuales ignorar en el proceso de copia para no sobreescribir archivos que no queramos.
+Para probarlo vamos hacer una copia completa de directorio `/var/www/`  pero excluyendo `var/www/error` , `var/www/stats` y `var/www/files/pictures` . Esto lo haremos con el siguiente comando `rsync -avz --delete --exclude=**/stats --exclude=**/error -- exclude=**/files/pictures -e "ssh -l root" root@192.168.1.100:/var/www/ /var/www/` , el resultado es el siguiente : ![ejercicio2.2](ejercicio2.2.png) 
