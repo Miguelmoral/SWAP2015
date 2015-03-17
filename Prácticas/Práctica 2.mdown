@@ -1,4 +1,4 @@
-##Práctica 1
+##Práctica2
 #Miguel Moral Llamas
 
 Al principio de la práctica me di cuenta de que no podia acceder de forma remota por ssh , ya que la versión de ubuntu server que instale es la 14.04.2 por lo tanto mediante un tutoríal indicado por el profesor edité el archivo `/etc/ssh/sshd_config` en dicho archivo tendremos que modificar el parámetro PermitirRootLogin y ponerlo a yes `PermitRootLogin yes`.
