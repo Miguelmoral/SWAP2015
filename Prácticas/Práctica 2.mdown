@@ -1,4 +1,4 @@
-##Práctica2
+##Práctica 1
 #Miguel Moral Llamas
 
 Al principio de la práctica me di cuenta de que no podia acceder de forma remota por ssh , ya que la versión de ubuntu server que instale es la 14.04.2 por lo tanto mediante un tutoríal indicado por el profesor edité el archivo `/etc/ssh/sshd_config` en dicho archivo tendremos que modificar el parámetro PermitirRootLogin y ponerlo a yes `PermitRootLogin yes`.
@@ -30,10 +30,18 @@ Para probarlo vamos hacer una copia completa de directorio `/var/www/`  pero exc
 #Ejercicio3
 Vamos a proceder a configurar el ssh para acceder a máquinas remotas sin contraseña. Con el comando `ssh-keygen -t dsa` vamos a generar la clave mediante ssh-keygen ![ej3](ej3.png)
 Para la copia de la clave vamos a usar el comando ssh-copy-id que viene integrado con el comando ssh. -lo que haremos de esta manera es copiarla a la máquina principal , la forma de hacer dicha copia es la siguiente `ssh-copy-id -i .ssh/id_dsa.pub root@192.168.1.100` 
-
 ![ej3.1](ej3.1.png) 
 
 De esta forma ya podremos conectarnos al equipo1 sin contraseña.
 En esta captura podemos ver como he accedido a la máquina1 mediante ssh sin necesidad de intruducir la contraseña
 ![ej3.2](ej3.2.png)
+
+#Ejercicio 4
+Haciendo un cat de /etc/crontab/ podemos ver que el archivo tiene el siguiente aspecto:
+
+![ej4](ej4.png)
+
+Modificando este archivo podemos poner todas las tareas que queramos .
+Como ejemplo he puesto (se puede ver en la última linea)   `33 22 * * * root /sbin/shutdown -h now` la cual apagará el pc todos los dias a las 22:45
+Se puede encontrar mucha información sobre crontab en el siguiente enlace : [Crontab]([http://www.linuxtotal.com.mx/?cont=info_admon_006](http://www.linuxtotal.com.mx/?cont=info_admon_006))
 
