@@ -28,12 +28,16 @@ Para probarlo vamos hacer una copia completa de directorio `/var/www/`  pero exc
 
 
 #Ejercicio3
-Vamos a proceder a configurar el ssh para acceder a máquinas remotas sin contraseña. Con el comando `ssh-keygen -t dsa` vamos a generar la clave mediante ssh-keygen ![ej3](ej3.png)
+Vamos a proceder a configurar el ssh para acceder a máquinas remotas sin contraseña. Con el comando `ssh-keygen -t dsa` vamos a generar la clave mediante ssh-keygen
+![ej3](ej3.png)
+
 Para la copia de la clave vamos a usar el comando ssh-copy-id que viene integrado con el comando ssh. -lo que haremos de esta manera es copiarla a la máquina principal , la forma de hacer dicha copia es la siguiente `ssh-copy-id -i .ssh/id_dsa.pub root@192.168.1.100` 
+
 ![ej3.1](ej3.1.png) 
 
 De esta forma ya podremos conectarnos al equipo1 sin contraseña.
 En esta captura podemos ver como he accedido a la máquina1 mediante ssh sin necesidad de intruducir la contraseña
+
 ![ej3.2](ej3.2.png)
 
 #Ejercicio 4
