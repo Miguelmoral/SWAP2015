@@ -1,0 +1,74 @@
+##Práctica 3
+#Miguel Moral Llamas
+
+En primer lugar he tenido que crear una nueva máquina virtual la cual usaremos para balancear la carga de las otras dos máquinas virtuales. 
+Para poder realizar las tareas de balanceo de carga esta tendrá que poder acceder al puerto 80 , por lo tanto no podemos instalar apache
+#Ejercicio 3.1
+Vamos a instalar nginx en ubuntu server.
+Lo primero que vamos hacer es es importar la clave del repositorio de software. Esto lo haremos con los siguientes comandos:
+	cd /tmp/	
+	wget http://nginx.org/keys/nginx_signing.key
+	apt-key add /tmp/nginx_signing.key
+	rm -f /tmp/nginx_signing.key
+
+A continuación vamos a añadir al repositorio con los comandos:
+`echo "deb http://nginx.org/packages/ubuntu/ lucid nginx" >> /etc/apt/sources.list`
+ 
+ `echo "deb-src http://nginx.org/packages/ubuntu/ lucid nginx" >> /etc/apt/sources.list`
+
+![ej1](ej1.png)
+
+En este momento podemos instalar nginx con:
+	apt-get update
+	apt-get install nginx
+	
+Ahora que tenemos nginx instalado vamos a proceder a configurarlo.
+
+#Ejercicio 3.2
+Balanceo de carga usando nginx.
+Para configurarlo vamos a tener que modificar el fichero de configuración /etc//nginx/conf.d/default.conf.
+El archivo default.conf se nos queda de la siguiente forma:
+
+![ej2.1](ej2.1.png)
+
+Para comprobar que la configuración que acabamos de aplicar es correcta reiniciamos nginx con el comando `sudo service nginx restart`
+Y comprobamos que funciona correctamente haciendo peticiones a esta IP `curl 192.168.1.25` :
+
+![ej2.2](ej2.2.png)
+
+Tambien podemos asignar cargas de trabajo con nginx para pasar más tráfico a una máquina que a otra , esto se consigue simplemente añadiendo weight seguido de la carga que queremos asignarle a continuación de la ip de la máquina.Quedaria de la siguiente forma:
+upstream apaches {
+server 192.168.1.100 weight=1;
+server 192.168.1.24 weight=2;
+}
+De esta forma la primera máquina tendría menos carga de trabajo que la segunda.
+nginx tiene múltiples posibilidades para su configuración tanto como servidor web como para servidor de carga, estas pueden verse en cualquiera de estas dos web:
+-[Cibercity]([http://www.cyberciti.biz/tips/using-nginx-as-reverse-proxy.html])
+-[nginx.org]([http://nginx.org/en/docs/http/ngx_http_upstream_module.html])
+
+#4-Balanceo de carga con haproxy
+Instalamos haproxy con el siguiente comando `sudo apt-get install haproxy joe`  , a continuación modificamos el archivo /etc/haproxy/haproxy.cfg y modificamos dicho archivo de la siguiente forma
+![haproxy](haproxy.png)
+
+Para comprobar el correcto funcionamiento de nuestra configuración lanzamos el servicio haproxy mediante al comando `sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg` , si no nos muestra ningún mensaje ni aviso es que todo esta debidamente configurado y funcionando . Para finalizar hacemos peticiones a la IP del balanceador con cURL como con nginx `curl http://192.168.1.25`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
