@@ -1,0 +1,19 @@
+##Miguel Moral Llamas
+#Preguntas tema4
+
+#1-Cual de los siguientes enunciados sobre el balanceo mediante DNS en el funcionamiento básico de un servidor es cierta:
+	A)Su implementación no es para nada sencilla
+	B)Los DNS se inventaron realmente para resolver nombres a IP
+	C)DNS tiene información sobre la disponibilidad de casa máquina servidora final
+	D)Todas las anteriores son correctas
+	
+	Respuesta correcta:B
+	
+#2-Respecto al balanceo de carga con dispositivos hardware:
+	A)No se puede balancear la carga de dispositivos como cortafuegos o concentradores.
+	B)Si un grupo de servidores o un balanceador falla , no se puede mantener la navegación de ninguna forma.
+	C)Los balanceadores hardware mantienen y aseguran la sesión de navegación de los usuarios. Así se hace compatible el uso de cookies.
+	D)Este tipo de balanceadores no hacen traducción NAT.
+	
+	Respuesta correcta: C
+	
