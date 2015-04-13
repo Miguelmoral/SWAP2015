@@ -50,7 +50,12 @@ nginx tiene múltiples posibilidades para su configuración tanto como servidor 
 Instalamos haproxy con el siguiente comando `sudo apt-get install haproxy joe`  , a continuación modificamos el archivo /etc/haproxy/haproxy.cfg y modificamos dicho archivo de la siguiente forma
 ![haproxy](haproxy.png)
 
-Para comprobar el correcto funcionamiento de nuestra configuración lanzamos el servicio haproxy mediante al comando `sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg` , si no nos muestra ningún mensaje ni aviso es que todo esta debidamente configurado y funcionando . Para finalizar hacemos peticiones a la IP del balanceador con cURL como con nginx `curl http://192.168.1.25`
+Para comprobar el correcto funcionamiento de nuestra configuración , primeramente detenemos nginx con `service nginx stop` , a continuación lanzamos el servicio haproxy mediante al comando `sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg` , si no nos muestra ningún mensaje ni aviso es que todo esta debidamente configurado y funcionando . 
+
+![haproxy](haproxy2.png)
+
+
+Para finalizar hacemos peticiones a la IP del balanceador con cURL como con nginx `curl http://192.168.1.25` y el resultado es el mismo.
 
 
 
