@@ -4,7 +4,7 @@
 Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad.
 
 	-Python
-		-[Django](https://www.djangoproject.com/)
+		-[Django]([https://www.djangoproject.com/])
 		-[Turbogears](http://es.wikipedia.org/wiki/TurboGears)
 		-[Wheezy](https://pypi.python.org/pypi/wheezy.web)
 
