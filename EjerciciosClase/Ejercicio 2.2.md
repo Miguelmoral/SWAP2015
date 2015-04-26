@@ -1,0 +1,22 @@
+#Miguel Moral Llamas
+#Ejercicio 2.2
+
+Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad.
+
+	-Python
+		-[Django](https://www.djangoproject.com/)
+		-[Turbogears](http://es.wikipedia.org/wiki/TurboGears)
+		-[Wheezy](https://pypi.python.org/pypi/wheezy.web)
+
+	-Php
+		-[Medoo](https://pypi.python.org/pypi/wheezy.web)
+		-[Flight](http://flightphp.com/)
+		-[Phpixie](http://phpixie.com/)
+		-[Yii](http://www.yiiframework.com/)
+
+	-JavaScript
+		-[Dojo](http://en.wikipedia.org/wiki/Dojo_Toolkit)
+		-[JQuery](http://en.wikipedia.org/wiki/JQuery)
+		-[Enyo](http://en.wikipedia.org/wiki/Enyo_(software))
+		-[Echo3](http://en.wikipedia.org/wiki/Echo_(framework)#Echo3)
+
