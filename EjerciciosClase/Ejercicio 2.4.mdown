@@ -1,0 +1,38 @@
+#Miguel Moral Llamas
+##Ejercicio 2.4
+
+Buscar ejemplos de balanceadores software y hardware (productos comerciales).
+
+-Balanceadores hardware:
+	
+ - [Kemp](http://kemptechnologies.com/es/server-load-balancing-appliances/loadmaster-2600/overview/)
+ - [tp-link](http://www.tp-link.com/mx/products/details/?model=TL-R480T%2B)
+ - [Cisco](http://www.cisco.com/)
+
+-Balanceadores software:
+			
+- [nginx](http://nginx.org/) 
+- [haproxy](http://www.haproxy.org/)
+- [piranha](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/pdf/Load_Balancer_Administration/Red_Hat_Enterprise_Linux-6-Load_Balancer_Administration-en-US.pdf)
+- [balanceng](http://www.inlab.de/balanceng/)
+- [pen](http://siag.nu/pen/)
+- [load balancer project](http://www.jmcresearch.com/projects/loadbalancer/)
+- [Distributor load balancer](http://distributor.sourceforge.net/)
+- [Crossroads Load Balancer](http://crossroads.e-tunity.com/)
+
+-Servidores de almacenamiento:
+
+- [dell](http://www.dell.com/es/empresas/p/enterprise-products)
+- [lenovo](http://shop.lenovo.com/es/es/servers/)
+- [ovh](https://www.ovh.es/servidores_dedicados/almacenamiento/)
+- [Western Digital](http://www.wdc.com/sp/products/business/Windows-Storage-Servers/)
+
+-Servidores de aplicaciones:
+
+- [Bea WebLogic 8.1](http://www.jtech.ua.es/j2ee/2003-2004/abierto-j2ee-2003-2004/sa/sesion1-apuntes.htm)
+- [IBM WebSphere](http://www-01.ibm.com/software/es/websphere/)
+- [Sun ONE](http://docs.oracle.com/cd/E19050-01/sun.cluster31/817-4285/6mjqq6jaq/index.html)
+- [Borland AppServer 4.5](http://www.computerweekly.com/feature/Borland-AppServer-45) 
+
+
+	
