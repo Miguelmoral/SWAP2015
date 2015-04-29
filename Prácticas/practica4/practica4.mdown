@@ -1,0 +1,55 @@
+#Miguel Moral Llamas
+##Práctica 4
+
+#Configuración
+- Máquina 4 -> ip 192.168.1.26 (La que usaremos para realizar los benchmarks)
+- Máquina 3 -> ip 192.168.1.25 (Balanceadora , configurada con nginx y haproxy)
+- Máquina 2 -> ip 192.168.1.24 
+- Máquina 1 -> ip 192.168.1.100 
+
+En primer lugar para probar el correcto funcionamiento de la nueva máquina que he creado para realizar los benchmarks desde esta , he ejecutado el comando "ab" de la siguiente forma `ab -n 100 -c 10 http://192.168.1.25/` (con la ip de la máquina balanceadora) 
+
+![ej1](ej1.png)
+
+A continuación vamos a proceder a crear el scrip php facilitado por el profesor para que salgan tiempos mayores (index.php) el cual se encuentra en  `/var/www/html/` , este script lo crearemos tanto en la máquina 1 como en la 2 (las dos que no son la balanceadora.). Creamos index.php:
+
+![prueba](php.png)
+
+
+Para comprobar el correcto funcionamiento hacemos peticiones al balanceador desde una 4 máquina virtual:
+
+![balanceo](prueba.png)
+
+#Pruebas con ab
+Para ejecutar las pruebas con ab se ha utilizado el siguiente comando `ab -n 100 -c 10 http://192.168.1.25/index.php` , obteniendo la siguiente tabla de tiempos:
+
+![tiempos](tiempos.png)
+
+#Gráfica time taken for tests:
+
+![ttt](ttt.png)
+
+
+#Gráfica failed requests:
+
+![failed](failed.png)
+
+#Gráfica requests per second:
+
+![requests](requests.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
