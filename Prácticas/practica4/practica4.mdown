@@ -20,23 +20,58 @@ Para comprobar el correcto funcionamiento hacemos peticiones al balanceador desd
 
 ![balanceo](prueba.png)
 
-#Pruebas con ab
+##Pruebas con Apache Benchmark
 Para ejecutar las pruebas con ab se ha utilizado el siguiente comando `ab -n 100 -c 10 http://192.168.1.25/index.php` , obteniendo la siguiente tabla de tiempos:
 
 ![tiempos](tiempos.png)
 
-#Gráfica time taken for tests:
+##Gráfica time taken for tests:
 
 ![ttt](ttt.png)
 
 
-#Gráfica failed requests:
+##Gráfica failed requests:
 
 ![failed](failed.png)
 
-#Gráfica requests per second:
+##Gráfica requests per second:
 
 ![requests](requests.png)
+
+#Pruebas con siege
+
+Para la ejecución de esta bateria de pruebas se ha usado el comando `siege -b -t60S -v http://ip-maquina/index.php` obteniendo la siguiente tabla de tiempos:
+
+![siege](datossiege.png)
+
+##Gráfica availability
+
+![availability](availability.png)
+
+##Gráfica elapsed time
+
+![elapsed](elapsed.png)
+
+##Gráfica response time
+
+![response](response.png)
+
+##Gráfica transaction rate
+
+![transaction](transaction.png)
+
+##Gráfica longest transaction
+
+![longest](longest.png)
+
+#Conclusiones
+Podemos ver en las tablas como los tiempos mejoran considerablemente al usar el balanceador. Realmente no he visto una gran diferencia entre el balanceo con haproxy o con nginx , aunque en algunos campos se obtienen unos resultados un poco mejores con haproxy pero estas diferencias son mínimas.
+
+
+
+
+
+
 
 
 
