@@ -1,0 +1,106 @@
+#Miguel Moral Llamas
+##Práctica 5
+
+##Creación de una BD
+En primer lugar creamos una base de datos en la máquina 1
+
+![bd](basedatos.png)
+
+
+
+Y realizamos unas consultas simples:
+
+![consultas](bdpruebas.png)
+
+#Clonación de la BD
+
+Procedemos a clonar la base de datos con la herramienta que nos ofrece MySQL llamada mysqldump . Esta herramienta puede utilizarse para volcar una o varias BD
+para copia de seguridad o para transferir datos a otro servidor SQL (no
+necesariamente un servidor MySQL). EL volcado contiene comandos SQL para crear
+la BD, las tablas y rellenarlas.
+
+Podemos ver todas las opciones que nos ofrece esta herramienta con el comando `mysqldump --help` 
+
+Antes de hacer nada debemos evitar que la herramienta acceda a la BD para evitar que se cambie algo. Esto lo hacemos con el siguiente comando `FLUSH TABLES WITH READ LOCK;`.
+Ahora podemos hacer el mysqldump para guardar los datos con `mysqldump contactos -u root -p > /root/contactos.sql` (Esto lo haremos en máquina 1 , es decir en la que tenemos la base de datos creada).Y por último volvemos a desbloquear las tablas
+
+![clonado](clonado.png)
+
+En este momento accedemos a la máquina 2 y realizamos la copia con `scp root@192.168.1.100:/root/contactos.sql /root/`
+
+![copia](copia.png)
+
+De esta forma hemos copiado desde la máquina principal (1) a la máquina secundaria (2) los
+datos que hay almacenados en la BD de la máquina 1.
+Es importante destacar que el archivo .SQL de copia de seguridad tiene formato de
+texto plano, e incluye las sentencias SQL para restaurar los datos contenidos en la BD
+en otra máquina. Sin embargo, la orden mysqldump no incluye en ese archivo la
+sentencia para crear la BD (es necesario que nosotros la creemos en la máquina
+secundaria en un primer paso, antes de restaurar las tablas de esa BD y los datos
+contenidos en éstas).
+Con el archivo de copia de seguridad en el esclavo ya podemos importar la BD
+completa en el MySQL. Para ello, en un primer paso creamos la BD:
+    `mysql>CREATE DATABASE contactos;`
+y por último restauramos la bd `mysql -u root -p contactos < /root/contactos.sql`
+
+![rest](rest.png)
+
+#Replicación de BD mediante una configuración maestro-esclavo
+
+MySQL tiene la opción de configurar el demonio para hacer replicación de las BD sobre un esclavo a partir de los datos que almacena el maestro.
+Partimos teniendo clonadas las base de datos en ambas máquinas(paso anterior).
+Lo primero que debemos hacer es la configuración de mysql del maestro. Para ello editamos, como root, el /etc/mysql/my.cnf y realizamos las siguientes modificaciones:
+
+	`#bind-address 127.0.0.1`
+	log_error = /var/log/mysql/error.log
+	server-id = 1
+	log_bin = /var/log/mysql/bin.log
+	
+Guardamos el documento y reiniciamos el servicio:
+
+![reinicio](reinicio.png)
+
+Ahora pasamos a configurar el esclavo editando como root /etc/mysql/my.cnf La configuración es similar a la del maestro, con la diferencia de que el server-id en
+esta ocasión será 2. Podemos volver al
+maestro para crear un usuario y darle permisos de acceso para la replicación.Entramos en mysql y ejecutamos las siguientes sentencias: 
+
+![config](config.png)
+
+Volvemos a la máquina esclava, entramos en mysql y le damos los datos del maestro.
+
+![esclavo](conffinal.png)
+
+Ahora, podemos hacer pruebas en el maestro y deberían replicarse en el esclavo automáticamente.
+Volvemos al maestro y volvemos a activar las tablas para que puedan meterse nuevos datos en el maestro:
+    `mysql> UNLOCK TABLES;`
+
+Ahora, si queremos asegurarnos de que todo funciona perfectamente y que el esclavo
+no tiene ningún problema para replicar la información, nos vamos al esclavo y con la
+siguiente orden:
+	`mysql> SHOW SLAVE STATUS\G`
+revisamos si el valor de la variable “Seconds_Behind_Master” es distinto de “null”. En
+ese caso, todo estará funcionando perfectamente.
+
+![behind_master](behind_master.png)
+
+Para comprobar que todo funciona, debemos ir al maestro e introducir nuevos datos a
+la base de datos. A continuación vamos al esclavo para revisar si la modificación se ha
+reflejado en la tabla modificada en el maestro:
+
+![comprobacion](comprobacion.png)
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
