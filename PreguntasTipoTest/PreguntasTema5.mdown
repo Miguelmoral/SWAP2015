@@ -1,0 +1,17 @@
+#Miguel Moral Llamas
+##Preguntas tema 5
+
+1.Una de las métricas más importantes cuando hablamos del
+rendimiento de servidores web es :
+	A)Rendimiento , en bits por segundo.
+	b)Conexiones por segundo.
+	c)Número de conexiones concurrentes.
+	D)Ninguna de las opciones anteriores es correcta.
+	Solución : B
+
+2.Con respecto a Apache Benchmark :
+	A)Cada vez que ejecutemos el test obtendremos los mismos resultados por lo que tan solo necesitaremos realizar 1 ejecución.
+	b)Pide siempre diferentes páginas tal y como harían los usuarios reales.
+	c)No simula con total fidelidad el uso del sitio web que pueden hacer los usuarios habitualmente
+	d)Las medidas muestran exactamente el rendimiento real del sitio.
+	Respuesta: C
