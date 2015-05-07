@@ -1,0 +1,47 @@
+#Miguel Moral Llamas
+##Ejercicios tema 5
+
+#5.1-Buscar información sobre cómo calcular el número de conexiones por segundo.
+
+
+- En el caso de que nuestro servidor sea apache se puede usar la página server-status (siempre que se haya activado) , para activarlo tan solo hay que añadir el siguiente código al archivo httpd.conf :
+    
+		<Location /server-status>
+		SetHandler server-status
+		Order Deny,Allow
+		Deny from all
+		Allow from .foo.com
+		</Location>
+
+
+- Otra opción es utilizar el comando `netstat`
+
+Para mostrar todas las conexiones a internet activas a los servidores utilizaremos
+
+	`netstat -na`
+
+Para mostrar solo las conexiones que vayan al puerto 80 del servidor usaremos
+
+	`netstat -an | grep :80 | sort`
+
+- Tambien lo podemos medir utilizando nginx , para ello modificamos nginx.config añadiendo:
+	
+
+		`location /nginx_status {
+        	# Turn on stats
+        	stub_status on;
+        	access_log   off;
+        	# only allow access from 192.168.1.5 #
+        	allow 192.168.1.5;
+        	deny all;
+   		}`
+
+a continuación reiniciamos nginx `service nginx reload` y para probarlo `http://ip.address.here/nginx_status`
+
+#5.2Buscar información sobre características, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
+
+En windows podemos utilizar las propias herramientas del sistema como el administrador de tareas el monitor de recursos el monitor de rendimiento y el monitor de eventos , podemos ver información más detallada de cada herrramienta en el siguiente [enlace](http://www.pello.info/index.php/blog/monitorizando-un-servidor-windows-2012) 
+
+Monitorización en la nube con [Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring_ec2.html) o otra alternativa la cual es gratuita [CopperEgg](http://copperegg.com/glossary/cloud/)
+
+En linux tenemos los comandos `top` `vmstat` o `nstat` el cual se ha comentado en el ejercicio anterior 
