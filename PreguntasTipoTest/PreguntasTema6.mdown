@@ -1,0 +1,27 @@
+#Miguel Moral Llamas
+##Preguntas tema 6
+
+1-Respecto a las políticas de seguridad:
+	
+	A)Los procedimientos de identificación comprueban si un individuo es reconocido por alguno de los sistemas de seguridad de la granja web excluyendo el firewall.
+	
+	B)los privilegios de uso definen qué acciones puede llevar a cabo cada tipo de usuario correctamente identificado.
+
+	C)En los procesos de autenticación no se solicita el nombre de usuario ni la clave.
+
+	D)La seguridad a nivel físico no es importante es mejor centrarse en la seguridad a nivel de red.
+
+	Respuesta: B
+
+2-Cuales de las siguientes acciones no se realiza para asegurar un servidor:
+
+	A)Renombrar las cuentas de administrador e invitado
+
+	B)Eliminar los drivers de red que no sean necesarios.
+
+	C)Establecer políticas de seguridad.
+
+	D)Definir una lista de control de acceso (usuarios o grupos que pueden acceder a ciertos recursos concretos).
+	
+	Respuesta: D	 
+	
