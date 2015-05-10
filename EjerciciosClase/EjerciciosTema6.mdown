@@ -1,0 +1,65 @@
+#Miguel Moral Llamas
+##Ejercicios tema6
+
+#Ejercicio T6.1: Aplicar con iptables una política de denegar todo el tráfico.
+
+En primer lugar limpiamos todas las reglas establecidas en el servidor con :
+
+	iptables -F
+	iptables -X
+
+A continuación establecemos la política de filtros para denegar todo por defecto:
+
+	iptables -P IMPUT DROP
+	iptables -P OUTPUT DROP
+	iptables -P FORWARD DROP
+	
+Aceptar todas las peticiones entrantes por http al servidor web por el puerto 80 desde cualquier sitio:
+
+	iptables -A INPUT -p tcp -s 0/0 –sport 1024:65535 -d 192.168.1.33 –dport 80 -m state –state NEW,ESTABLISHED -j ACCEPT
+
+Aceptar todas las respuestas salientes por HTTP desde el servidor web por el puerto 80 a cualquier sitio:
+
+	
+	iptables -A OUTPUT -p tcp -s 192.168.1.33 –sport 80 -d 0/0 –dport 1024:65535 -m state –state ESTABLISHED -j ACCEPT
+
+Aceptar todas las peticiones entrantes por HTTPS al servidor web por el puerto 443 desde cualquier sitio:
+
+	iptables -A INPUT -p TCP -s 0/0 –sport 1024:65535 -d 192.168.1.33 –dport 443 -m state –state NEW,ESTABLISHED -j ACCEPT
+
+Aceptar todas las respuestas salientes por HTTPS desde el servidor veb por el puerto 433 a cualquier sitio:
+
+	iptables -A OUTPUT -p tcp -s 192.168.1.33 –sport 443 -d 0/0 –dport 1024:65535 -m state –state ESTABLISHED -j ACCEPT
+
+Aceptar conexiones entantes SSH solamente desde la dirección IP de administración al servidor web en el puerto 22 TCP
+
+	iptables -A INPUT -p tcp -s 192.168.1.34 –sport 1024:65535 -d 192.168.1.33 –dport 22 -m state –state NEW,ESTABLISHED -j ACCEPT
+
+Aceptar todo el tráfico SSH saliente solamente desde el servidor web en el puerto 22/TCP la dirección de administración:
+
+	iptables -A OUTPUT -p tcp -s 192.168.1.33 –sport 22 -d 192.168.1.34 –dport 1024:65535 -m state –state ESTABLISHED -j ACCEPT
+
+Definir que todo el tráfico entrante y/o saliente que no coincida con los criterios anteriormente de clarados deven ser borrados
+	
+	
+	iptables -A INPUT -j DROP
+	iptables -A OUTPUT -j DROP
+
+
+##Ejercicio T6.2:Comprobar qué puertos tienen abiertos nuestras máquinas, su estado, y qué programa o demonio lo ocupa.
+
+Esta información la podemos obtener mediante el comando netstat:
+
+![netstat](netstat.png)
+
+
+##Ejercicio T6.3: Buscar información acerca de los tipos de ataques más comunes en servidores web, en qué consisten, y cómo se pueden evitar.
+
+- Ataque por injection : Los ataques de inyección (sqli) , es una técnica que consiste en modificar una cadena de consulta de base dedatos mediante la inyección de código en la consulta. El sqli explota una posible vulnerabilidad donde las consultas se pueden ejecutar con los datos validados.SQLI siguen siendo una de las técnicas de sitios web más usadas y se pueden utilizar para obtener acceso a las tablas de bases de datos, incluyendo información del usuario y la contraseña. Se encuentran entre los ataques más fáciles de ejecutar , que no requiere más que un solo PC y una pequeña cantidad de conocimientos de base de datos.
+
+- DDoS: La Denegación de Servicio (DoS) ó Denegación de Servicio Distribuida (DDoS) son las formas más comunes para congelar el funcionamiento de un sitio web. Los ataques de denegación de servicio funcionan cuando una computadora con una conexión a Internet intenta inundar un servidor con paquetes.Hay 3 tipos de ataques DDoS principalmente , los ataques de volumen, donde el ataque intenta desbordar el ancho de banda en un sitio específico , los ataques de protocolo, donde los paquetes intentan consumir servicios o recursos de la red y los ataques a aplicaciones, donde las peticiones se hacen con la intención de “explotar” el servidor web, mediante la capa de aplicación.
+
+- Fuerza Bruta : Estos son básicamente intenta “romper” todas las combinaciones posibles de nombre de usuario + contraseña en una página web. Los ataques de fuerza bruta buscan contraseñas débiles para ser descifradas y tener acceso de forma facil. 
+
+- Cross Site Scripting : Los atacantes utilizan Cross-site Scripting (XSS) para inyectar scripts maliciosos en lo que serían sitios web inofensivos. Debido a que estos scripts parecen provenir de sitios web de confianza, el navegador de los usuarios finales casi siempre ejecuta la secuencia de comandos, la concesión de los piratas informáticos el acceso a la información contenida en las cookies o tokens de sesión utilizados con ese sitio. El XSS generalmente se utiliza para obtener acceso de un usuario de la cuenta.
+
