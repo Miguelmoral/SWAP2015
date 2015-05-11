@@ -1,0 +1,8 @@
+montar unidad de disco automaticamente
+	obtener el ID unico de la unidad
+	-blkid
+	-lsblk
+	ls -l /dv/disk/by-uuid
+
+	Añadir al /etc/fstab
+	uuid = 90j017.........  /mnt/datos ext4...

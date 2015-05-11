@@ -1,0 +1,28 @@
+#Miguel Moral Llamas
+##Práctica 6
+
+En primer lugar añadimos dos nuevos discos duros a la máquina virtual sobre los que haremos el raid :
+
+![hd](hd.png)
+
+A continuación instalamos mdadm con el siguiente comando ` sudo apt-get install mdadm ` y procedemos a la creación de un RAID1 con `sudo mdadm -C /dev/md0 --level=raid1 --raid-devices=2 /dev/sdb /dev/sdc`:
+
+![creacion](creacion.png)
+
+Una vez que hemos creado el RAID debemos darle formato con `sudo mkfs /dev/md0`
+
+![formato](formato.png)
+
+Ahora podemos crear el directorio en el que se montará la unidad del RAID
+
+![directorio](directorio.png)
+
+Para que el RAId arranque automaticamente cada vez que arranquemos la máquina deberemos modificar el archivo /etc/fstab dejandolo de la siguietne forma:
+
+![fstab](fstab.png)
+
+El UUID lo he obtenido con `ls -l /dev/disk/bu-uuid/`
+
+![uuid](uuid.png)
+
+
