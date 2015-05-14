@@ -1,0 +1,31 @@
+#Miguel Moral Llamas
+
+##Preguntas tema 7
+
+1-En una Base de datos (cual es falsa):
+
+- A)El número de sesiones concurrentes en la BD no afecta al rendimiento de la granja web completa ya que disponemos de máquinas muy potentes.
+	
+- B)Las búsquedas que devuelvan resultados muy grandes afectarán al rendimiento de CPU , almacenamiento y red.
+
+- C)Conviene utilizar hardware redundante para los servidores.
+
+- D)La arquitectura de la BD debe estar basada en un cluster.
+
+- Respuesta correcta: A
+
+
+2-Tipos de raid , marcar la opción correcta:
+
+- A)RAID 0 , ofrece una gran fiabilidad ya que lo que hace este tipo de RAID es crear una copia exacta (espejo) de un conjunto de datos en dos o más discos.
+
+- B)RAID 1 , incrementa la velocidad de escritura y lectura gracias al reparto de los datos entre varios discos.
+
+- C)RAID 2 , permite la corrección de errores usando una división a nivel de bits.
+
+- D)Ninguna de las anteriores es correcta.
+
+- Respuesta correcta: C
+
+
+	
