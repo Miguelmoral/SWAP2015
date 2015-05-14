@@ -1,0 +1,22 @@
+#Miguel Moral Llamas
+##Ejercicios tema 7
+
+##Ejercicio T7.1 : 	¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 0 a partir de dos discos de 100 GB y 100 GB?
+
+- Nos quedaría una unidad con 200 GB.
+
+##¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 0 a partir de tres discos de 200 GB cada uno?
+
+- Nos quedaría una unidad de 600 GB.
+
+##Ejercicio T7.2 : ¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 1 a partir de dos discos de 100 GB y 100 GB?
+
+- Obtendríamos una unidad de 100 GB.
+
+##¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 1 a partir de tres discos de 200 GB cada uno?
+
+- Tendríamos una unidad con 200 GB.
+
+##Ejercicio T7.3 : ¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 5 a partir de tres discos de 120 GB cada uno?
+
+- Nos quedaría 120 + 120 + 120 = 360 - 120 = 240 GB .
