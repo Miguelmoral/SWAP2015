@@ -1,0 +1,26 @@
+#Miguel Moral Llamas
+##Preguntas tema 8
+
+1-Con respecto a nuestros servidores de la granja web cual de las siguientes afirmaciones NO es correcta:
+
+	A)Conviene cachear las imágenes más comunes , así las páginas que las muestren se servirán más rápido , haciendo que el tiempo medio de servicio sea más rapido.
+
+	b)Debemos asegurarnos tener máquinas con gran cantidad de RAM , expandible a un máximo que vendrá dado en función del tamaño estimado de ese conjunto de páginas más populares.
+
+	c)Los servidores web necesitan una capacidad de procesamiento especialmente alta , ya que los servicios HTTP consumen demasiada CPU.
+
+	d)Todas las anteriores son correctas.
+
+	Respuesta correcta : C.
+
+2-Cual de las siguientes afirmaciones NO es correcta respecto a que parámetros hay que determinar para estimar el ancho de banda :
+	
+	A)El porcentaje del ancho de banda que se reserva para el servidor web
+	
+	B)El número de bytes que el cliente enviará al servidor en cada petición.
+
+	C)El número de bytes que el servidor enviará al cliente en cada petición.
+
+	D)Todas las anteriores son correctas.
+
+	Respuesta correcta:D. 
