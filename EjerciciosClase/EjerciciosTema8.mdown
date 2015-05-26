@@ -1,0 +1,15 @@
+#Miguel Moral Llamas
+##Ejercicios T8
+
+#Buscar información sobre tipos de conexiones de red utilizados especialmente en arquitecturas de servidores web de altas prestaciones.
+
+- Fast Ethernet o Ethernet de alta velocidad es el nombre de una serie de estándares de IEEE de redes Ethernet de 100 Mbps (megabits por segundo).
+
+- Gigabit Ethernet, también conocida como GigaE, es una ampliación del estándar Ethernet (concretamente la versión 802.3ab y 802.3z del IEEE) que consigue una capacidad de transmisión de 1 gigabit por segundo, correspondientes a unos 1000 megabits por segundo de rendimiento contra unos 100 de Fast Ethernet (También llamado 100BASE-TX).
+
+- InfiniBand es un bus serie bidireccional de comunicaciones de alta velocidad, llegando a ofrecer velocidades de hasta 2.0Gbps netos en cada dirección del enlace en un nodo simple, 4Gbps netos en un nodo doble y hasta 8Gbps netos en un nodo quadruple. Estos nodos a su vez se pueden agrupar en grupos de 4 o 12 enlaces llegando a velocidades de hasta 96Gbps netos en un grupo de 12 nodos quadruples. El factor de velocidad neta viene relacionado con que Infiniband de cada 10 bits que transmite 8 de ellos son datos, basándose en la codificación 8B/10B.
+
+- Es un estándar que permite a sistemas crecer con componentes modulares de diferentes vendedores , sus características son : Flujo de datos de hasta 1 Gbyte/s por nodo , memoria distribuida compartida , links de datos unidireccionables de 16 bits cada 2 ns , posibles enlaces por fibra óptica o coaxial de 1 Gbit para aplicaciones LAN con protocolos eficientes de memoria compartida.
+
+
+
